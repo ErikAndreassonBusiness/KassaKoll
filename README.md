@@ -20,3 +20,30 @@ Kunden får ett direkt svar på frågan: _"Finns det tillräckligt med kassa i f
 ## 🏗️ Systemarkitektur
 
 Projektet är uppbyggt av en frikopplad arkitektur med en Python-backend och en lättviktig webb-frontend:
+
+```text
+┌────────────────────────────────────────────────────────┐
+│                  Fortnox Gränssnitt                    │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │  Frontend (Embedded iFrame / Dashboard)          │  │
+│  │  - HTML / CSS / JavaScript                       │  │
+│  │  - Chart.js (Visualisering & Grafer)             │  │
+│  └─────────────────────────┬────────────────────────┘  │
+└────────────────────────────┼───────────────────────────┘
+                             │ API-anrop (JSON)
+                             ▼
+┌────────────────────────────────────────────────────────┐
+│                  Backend (FastAPI)                     │
+│  - OAuth 2.0 & Token Refresh Manager                   │
+│  - Likviditetsmotor (Kassa + Inbet - Utbet)            │
+│  - Database Manager (Tokens & Inställningar)           │
+└────────────────────────────┬───────────────────────────┘
+                             │ REST API (HTTPS)
+                             ▼
+┌────────────────────────────────────────────────────────┐
+│                     Fortnox API                        │
+│  - /3/financialyears & /3/accounts (Konto 19XX)        │
+│  - /3/invoices (Obetalda kundfakturor)                 │
+│  - /3/supplierinvoices (Obetalda leverantörsfakturor)  │
+└────────────────────────────────────────────────────────┘
+```
