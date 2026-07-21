@@ -47,3 +47,89 @@ Projektet är uppbyggt av en frikopplad arkitektur med en Python-backend och en 
 │  - /3/supplierinvoices (Obetalda leverantörsfakturor)  │
 └────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## 📁 Mappsturktur
+
+```text
+KassaKoll/
+├── app/
+│   ├── client/
+│   │   ├── static/          # CSS, JavaScript, Images, etc.
+│   │   └── templates/       # HTML templates (Jinja2)
+│   └── server/
+│       └── __init__.py      # FastAPI application setup (`app = FastAPI()`)
+├── .gitignore
+├── .python-version
+├── pyproject.toml           # Project dependencies & metadata
+├── README.md
+├── run.py                   # Main entry point (`uv run run.py`)
+└── uv.lock                  # Deterministic lockfile managed by uv
+```
+
+---
+
+## UV Workfolw Guide
+
+### Set Up Environment
+
+Install all dependencies from `uv.lock` into your virtual environment:
+
+```bash
+uv sync
+```
+
+### Run the Development Server
+
+Start the FastAPI app with hot-reloading enabled:
+
+```bash
+uv run run.py
+```
+
+---
+
+## `uv` Complete Workflow Cheat Sheet
+
+This project relies on **`uv`** for managing dependencies, virtual environments, and python scripts.
+
+### Adding Dependencies
+
+To install a new production package and automatically update `pyproject.toml` and `uv.lock`:
+
+```bash
+uv add <package_name>
+```
+
+For development-only tools (testing, formatting, linters):
+
+```bash
+uv add --dev <package_name>
+```
+
+### Removing Dependencies
+
+To uninstall a package and clean up project files:
+
+```bash
+uv remove <package_name>
+```
+
+### Updating Dependencies
+
+To bump packages to their latest compatible versions and sync:
+
+```bash
+uv lock --upgrade
+uv sync
+```
+
+### Reset Environment
+
+If you ever need to perform a clean reinstall of your `.venv`:
+
+```bash
+rm -rf .venv
+uv sync
+```
