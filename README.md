@@ -1,4 +1,4 @@
-# 📈 Kassakollen – Fortnox Integration
+# Kassakollen – Fortnox Integration
 
 > **Automatiserad likviditetsanalys och kassaflödesprognos direkt inuti Fortnox.**
 
@@ -8,7 +8,7 @@ Kunden får ett direkt svar på frågan: _"Finns det tillräckligt med kassa i f
 
 ---
 
-## 🚀 Funktioner
+## Funktioner
 
 - **Realtidsöversikt av kassan:** Läser av aktuellt saldo på likvida konton (Konto 19XX).
 - **30-dagars Likviditetsprognos:** Beräknar kassaflödet framåt genom att ställa tillgänglig kassa + kommande inbetalningar (kundfakturor) mot kommande utbetalningar (leverantörsfakturor).
@@ -17,7 +17,7 @@ Kunden får ett direkt svar på frågan: _"Finns det tillräckligt med kassa i f
 
 ---
 
-## 🏗️ Systemarkitektur
+## Systemarkitektur
 
 Projektet är uppbyggt av en frikopplad arkitektur med en Python-backend och en lättviktig webb-frontend:
 
