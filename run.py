@@ -8,4 +8,4 @@ if __name__ == "__main__":
     print(" ReDoc:      http://localhost:5001/redoc")
     print("=" * 45 + "\n")
 
-    uvicorn.run("app.server:app", host="127.0.0.1", port=5001, reload=True)
+    uvicorn.run("app.server:app", host="127.0.0.1", port=8000, reload=True)
