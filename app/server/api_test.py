@@ -28,3 +28,4 @@ def authorize_integration():
     """
 
     auth_code = get_auth_code()
+    

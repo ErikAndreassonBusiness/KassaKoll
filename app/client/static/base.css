@@ -1,0 +1,37 @@
+/* Color Palette Variables */
+:root {
+  --kassakoll-primary-background: #f8fafc;
+  --kassakoll-text-headers: #0f172a;
+  --fortnox-teal: #00c8c8;
+  --fortnox-teal-hover: #00b3b3;
+  --simulation--green: #10b981;
+}
+
+body.bg-light-slate {
+  background-color: var(--kassakoll-primary-background);
+}
+
+.text-navy {
+  color: var(--kassakoll-text-headers) !important;
+}
+
+.bg-navy {
+  background-color: var(--kassakoll-text-headers) !important;
+}
+
+.text-success-emerald {
+  color: var(--simulation--green) !important;
+}
+
+/* Custom Fortnox Button */
+.btn-fortnox {
+  background-color: var(--fortnox-teal);
+  color: #ffffff;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-fortnox:hover {
+  background-color: var(--fortnox-teal-hover);
+  color: #ffffff;
+}
