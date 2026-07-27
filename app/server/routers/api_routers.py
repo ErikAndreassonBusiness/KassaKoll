@@ -1,10 +1,12 @@
-# Responsibility: Define API endpoints without touching app directly
-
-# Example:
+# app/server/routers/api_routers.py
 from fastapi import APIRouter
+from app.server.routers.auth import router as auth_router 
 
-router = APIRouter(prefix="/api/v1", tags=["Forecast"])
+router = APIRouter(prefix="/api", tags=["API"])
+router.include_router(auth_router)
 
-@router.post("/auth/redirect")
+
+# 3. Your other API endpoints (Forecast, etc.) EXAMPLE
+@router.post("/forecast")
 def get_forecast():
     return {"status": "ok", "message": "Likviditetsdata för KassaKoll"}
