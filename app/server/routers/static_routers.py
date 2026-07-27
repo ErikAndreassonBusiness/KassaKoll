@@ -1,5 +1,4 @@
 # Responsibility: Route requests to HTML templates for pages like Login, Dashboard, etc.
-
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
