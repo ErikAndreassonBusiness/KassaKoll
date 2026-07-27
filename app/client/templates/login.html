@@ -12,11 +12,12 @@ block content %}
     </p>
 
     <!-- This link will eventually point to your FastAPI route that triggers the Fortnox OAuth URL -->
-    <a href="/auth/login" class="btn btn-fortnox btn-lg w-100 fw-bold">
-      Koppla till Fortnox
+    <a href="/auth/fortnox/login" class="btn btn-fortnox btn-lg w-100 fw-bold">
+      Log in with Fortnox
     </a>
   </div>
 </div>
 {% endblock %} {% block scripts %}
 <script src="{{ url_for('static', path='/js/login.js') }}"></script>
+<script src="{{ url_for('static', path='/js/api.js') }}"></script>
 {% endblock %}
